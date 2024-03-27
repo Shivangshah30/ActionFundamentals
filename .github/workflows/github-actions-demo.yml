@@ -10,11 +10,12 @@ on:
   workflow_dispatch:
 jobs:
   Build:
-    runs-on: Ubutnu:latest
+    runs-on: ubutnu:latest
     steps:
-      - run: 
-            echo "triggered by {{github.event-name}}"
-
-   
+      - run: |
+            echo "triggered by ${{github.event-name}}"
+            echo "branch is ${{github.ref}}"
+            echo "The repository ${{ github.repository }} contains the following files:"
+            tree
    
   
